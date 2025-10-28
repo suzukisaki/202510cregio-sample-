@@ -1,0 +1,834 @@
+@charset "UTF-8";
+body {
+  font-family: "Noto Serif JP", serif;
+  letter-spacing: 0.12em;
+  font-size: 1rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+}
+
+section {
+  padding-block: 100px;
+}
+@media screen and (max-width: 1000px) {
+  section {
+    padding-block: 40px;
+  }
+}
+
+.wrapper {
+  max-width: 1100px;
+  padding-inline: 3%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    max-width: auto;
+    padding-inline: 7%;
+  }
+}
+
+.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 120px;
+  text-align: center;
+  position: relative;
+  letter-spacing: 0.07em;
+  text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 1.5px;
+  background-color: #333;
+  top: 90px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+}
+@media screen and (max-width: 1000px) {
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 60px;
+  }
+  .section-title::after {
+    top: 50px;
+  }
+}
+
+.column-3 {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1000px) {
+  .column-3 {
+    display: block;
+  }
+}
+.column-3 .card {
+  width: 31%;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+  /* ← ぼかし枠 */
+  border-radius: 5px;
+}
+@media screen and (max-width: 1000px) {
+  .column-3 .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.column-2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 1000px) {
+  .column-2 {
+    margin-bottom: 70px;
+  }
+}
+.column-2 .card {
+  width: 47%;
+  height: auto;
+  padding: 20px 0px;
+  background-color: #fff;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+@media screen and (max-width: 1000px) {
+  .column-2 .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.column-2 .text-wrap {
+  width: 47%;
+}
+@media screen and (max-width: 1000px) {
+  .column-2 .text-wrap {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+.column-2 .img-wrap {
+  width: 48%;
+}
+@media screen and (max-width: 1000px) {
+  .column-2 .img-wrap {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .column-2 {
+    display: block;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+}
+@media screen and (max-width: 1000px) {
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  line-height: 2em;
+  font-family: "Noto Sans JP", serif;
+}
+@media screen and (max-width: 1000px) {
+  p {
+    font-size: 0.75rem;
+    line-height: 1.8em;
+    margin-bottom: 10px;
+  }
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #8F1615;
+  color: #fff;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.7rem;
+  font-weight: 700;
+  padding: 20px 50px;
+  border-radius: 15px;
+  box-shadow: 6px 6px 0px #5e2224;
+  transition: transform 0.2s;
+}
+.cta-button:hover {
+  transform: translateY(10px);
+  box-shadow: none;
+}
+@media screen and (max-width: 1000px) {
+  .cta-button {
+    font-size: 1.25rem;
+    padding: 15px 50px;
+    letter-spacing: 0.3rem;
+  }
+}
+
+.sp-button {
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .sp-button {
+    display: block;
+    text-align: center;
+    padding: 5% 5% 8%;
+    background-color: #F0F0F0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .sp-button .notes {
+    font-size: 1.05rem;
+  }
+}
+
+.main-visual {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  padding-top: 6%;
+  background-image: url(../img/fv-background2.png);
+  background-position: bottom center; /* ← 下中央に配置 */
+  background-repeat: no-repeat;
+  background-size: cover; /* or contain */
+  color: #fff;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual {
+    text-align: center;
+    padding-top: 15%;
+    height: 82vh;
+    background-image: url(../img/fv-background-sp.png);
+  }
+}
+.main-visual .logo {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .logo {
+    width: 200px;
+  }
+}
+.main-visual .container {
+  width: 90%;
+  font-weight: 900;
+  padding-inline: 8%;
+  text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container {
+    width: 100%;
+  }
+}
+.main-visual .container .catchphrase {
+  display: inline-block;
+  font-size: 2.875rem;
+  text-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 25px;
+  padding: 2px 15px 2px 30px;
+  background-color: #fff;
+  color: #3B417D;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container .catchphrase {
+    padding: 5px 5px 2px 10px;
+    font-size: 1.25rem;
+    width: 100%;
+    letter-spacing: 0.05em;
+    margin-bottom: 15px;
+  }
+}
+.main-visual .container .main-title {
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 2px solid #fff;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+  padding: 10px 12px 0;
+  font-size: 4.8rem;
+  font-weight: bold;
+  letter-spacing: 0.8rem;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container .main-title {
+    padding: 5px 7px 0;
+    font-size: 2.3rem;
+    letter-spacing: 0.2em;
+  }
+}
+.main-visual .container .main-title span {
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container .main-title span {
+    font-size: 1.55rem;
+    letter-spacing: 0.09rem;
+  }
+}
+.main-visual .container .subtitle {
+  font-size: 3.05rem;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container .subtitle {
+    font-size: 1.15rem;
+    letter-spacing: 0.01rem;
+  }
+}
+.main-visual .container .event-info {
+  margin-top: 40px;
+  display: inline-block;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container .event-info {
+    width: 100%;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+  }
+}
+.main-visual .container .event-info .date-time {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-weight: 700;
+  border-bottom: 1.5px solid #fff;
+}
+.main-visual .container .event-info .date-time .date {
+  font-size: 4.5rem;
+  line-height: 1em;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container .event-info .date-time .date {
+    font-size: 2.2rem;
+  }
+}
+.main-visual .container .event-info .date-time .day {
+  font-size: 1.7rem;
+  padding: 0 8px;
+  background-color: #9E373C;
+  margin-inline: 20px 40px;
+  line-height: 1.7em;
+  margin-top: -50px;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container .event-info .date-time .day {
+    font-size: 0.875rem;
+    margin-inline: 5px 10px;
+  }
+}
+.main-visual .container .event-info .date-time .time {
+  font-size: 2.2rem;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container .event-info .date-time .time {
+    font-size: 1.2rem;
+  }
+}
+.main-visual .container .event-info .location {
+  font-size: 2.2rem;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container .event-info .location {
+    font-size: 1rem;
+  }
+}
+.main-visual .container .event-info .mv-button {
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+}
+@media screen and (max-width: 1000px) {
+  .main-visual .container .event-info .mv-button {
+    display: none;
+  }
+}
+.main-visual .container .event-info .mv-button .notes {
+  font-size: 1.25rem;
+  letter-spacing: 0.5rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.highlight {
+  background-color: #ffffff;
+}
+.highlight .text-wrap {
+  width: 45%;
+}
+@media screen and (max-width: 1000px) {
+  .highlight .text-wrap {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.highlight .text-wrap .highlight-title {
+  display: flex;
+  align-items: center;
+}
+.highlight .text-wrap .highlight-title .num {
+  background-color: #3B417D;
+  padding: 10px;
+  color: #fff;
+  margin-right: 20px;
+  display: inline-block;
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+  .highlight .text-wrap .highlight-title .num {
+    font-size: 1.2rem;
+    padding: 8px;
+    margin-right: 15px;
+  }
+}
+.highlight .text-wrap .highlight-title h3 {
+  color: #3B417D;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.highlight .text-wrap .comment {
+  margin-top: 30px;
+}
+.highlight .highlight-img {
+  width: 50%;
+}
+@media screen and (max-width: 1000px) {
+  .highlight .highlight-img {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.market {
+  padding-block: 70px;
+  background-image: url(../img/market-bg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (max-width: 1000px) {
+  .market {
+    padding-block: 50px;
+  }
+}
+.market .wrapper {
+  max-width: 1300px;
+  padding-inline: 5%;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper {
+    max-width: auto;
+    padding-inline: 5%;
+  }
+}
+.market .wrapper .container {
+  background-color: #fff;
+  padding: 8% 5% 2%;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container {
+    padding: 8% 5%;
+  }
+}
+.market .wrapper .container .section-title {
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .section-title {
+    margin-block: 35px 70px;
+    font-size: 1.15rem;
+  }
+}
+.market .wrapper .container .section-title span {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .section-title span {
+    font-size: 0.875rem;
+  }
+}
+.market .wrapper .container .market-topic {
+  margin-bottom: 120px;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic {
+    margin-bottom: 70px;
+  }
+}
+.market .wrapper .container .market-topic .market-title {
+  background-color: #3B417D;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+.market .wrapper .container .market-topic .market-title span {
+  font-size: 1rem;
+  line-height: 0.25em;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic .market-title {
+    font-size: 1rem;
+  }
+}
+.market .wrapper .container .market-topic .market-comment p {
+  margin-top: 20px;
+}
+.market .wrapper .container .market-topic .market-comment ul {
+  background-color: #f0f1f6;
+  padding: 15px 30px;
+  margin-top: 15px;
+  border-left: #3B417D 5px solid;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic .market-comment ul {
+    padding: 15px;
+  }
+}
+.market .wrapper .container .market-topic .market-comment ul span {
+  background-color: #a85555;
+  color: #fff;
+  padding: 5px 15px;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic .market-comment ul span {
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+  }
+}
+.market .wrapper .container .market-topic .market-comment ul li {
+  margin: 10px 20px 0;
+  list-style: inside;
+  font-size: 0.875rem;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic .market-comment ul li {
+    margin: 5px 0;
+    font-size: 0.65rem;
+  }
+}
+.market .wrapper .container .market-topic .column-3 {
+  margin-block: 50px 30px;
+  border-radius: 15px;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic .column-3 {
+    margin-block: 30px 0;
+  }
+}
+.market .wrapper .container .market-topic .column-3 .card {
+  text-align: center;
+  padding-block: 25px;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic .column-3 .card {
+    padding-block: 10px;
+  }
+}
+.market .wrapper .container .market-topic .column-3 .card img {
+  width: 50%;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic .column-3 .card img {
+    width: 28%;
+  }
+}
+.market .wrapper .container .market-topic .column-3 .card .card-header {
+  background-color: white;
+  color: #182066;
+  line-height: 1.3;
+  border-bottom: 1px solid #333;
+  width: 70%;
+  margin: 10px auto 7px;
+  padding-bottom: 7px;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic .column-3 .card .card-header {
+    font-size: 0.85rem;
+  }
+}
+.market .wrapper .container .market-topic .column-3 .card p {
+  line-height: 1.3;
+}
+.market .wrapper .container .market-topic .column-2 {
+  margin-bottom: 50px;
+}
+.market .wrapper .container .market-topic .column-2 .card {
+  padding: 20px;
+}
+.market .wrapper .container .market-topic .column-2 .card .card-inner1,
+.market .wrapper .container .market-topic .column-2 .card .card-inner2 {
+  background-image: url(../img/market-6.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  padding: 30px 20px;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic .column-2 .card .card-inner1,
+  .market .wrapper .container .market-topic .column-2 .card .card-inner2 {
+    padding: 30px 20px;
+    height: auto;
+  }
+}
+.market .wrapper .container .market-topic .column-2 .card .card-inner1 .card-header,
+.market .wrapper .container .market-topic .column-2 .card .card-inner2 .card-header {
+  background-color: #7F7F7F;
+  color: #fff;
+  padding-block: 15px;
+  text-align: center;
+  font-size: 1.45rem;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .container .market-topic .column-2 .card .card-inner1 .card-header,
+  .market .wrapper .container .market-topic .column-2 .card .card-inner2 .card-header {
+    font-size: 1.25rem;
+  }
+}
+.market .wrapper .container .market-topic .column-2 .card .card-inner1 {
+  background-image: url(../img/market-5.png);
+}
+.market .wrapper .market-button {
+  text-align: center;
+  margin-top: 30px;
+}
+.market .wrapper .market-button p {
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .market-button p {
+    font-size: 1.25rem;
+    letter-spacing: 0.1em;
+  }
+}
+.market .wrapper .market-button .cta-button {
+  width: 700px;
+}
+@media screen and (max-width: 1000px) {
+  .market .wrapper .market-button .cta-button {
+    width: 100%;
+  }
+}
+
+.speaker {
+  background-color: #fff;
+}
+.speaker .text-wrap .company {
+  background-color: #3B417D;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  clip-path: polygon(7% 0, 100% 0, 100% 100%, 0% 100%);
+}
+@media screen and (max-width: 1000px) {
+  .speaker .text-wrap .company {
+    font-size: 0.875rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+.speaker .text-wrap .name {
+  font-size: 2rem;
+  border-bottom: 1px solid #333;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 1000px) {
+  .speaker .text-wrap .name {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+}
+.speaker .text-wrap .name span {
+  font-size: 1rem;
+  margin-left: 30px;
+}
+@media screen and (max-width: 1000px) {
+  .speaker .text-wrap .name span {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin-left: 20px;
+  }
+}
+.speaker img {
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 1000px) {
+  .speaker img {
+    height: 220px;
+    -o-object-position: top;
+       object-position: top;
+    /* ← 上寄せにして頭が切れないようにする */
+  }
+}
+.speaker .speaker-1 img {
+  height: 600px;
+}
+@media screen and (max-width: 1000px) {
+  .speaker .speaker-1 img {
+    height: 400px;
+  }
+}
+.speaker .speaker-2 {
+  flex-direction: row-reverse;
+}
+.speaker .speaker-2 .company {
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
+}
+@media screen and (max-width: 1000px) {
+  .speaker .speaker-2 .company {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+.contact {
+  background-color: #fff;
+  text-align: center;
+}
+.contact .container {
+  background-color: #F0F0F0;
+  padding: 80px 100px;
+  border-top: 5px solid #182066;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 1000px) {
+  .contact .container {
+    padding: 50px 20px;
+  }
+}
+.contact .container .section-title {
+  font-size: 2.25rem;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+@media screen and (max-width: 1000px) {
+  .contact .container .section-title {
+    font-size: 1.25rem;
+  }
+}
+.contact .container .section-title::after {
+  width: 0px;
+  top: 0px;
+}
+.contact .container .section-title span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 1000px) {
+  .contact .container .section-title span {
+    font-size: 0.875rem;
+  }
+}
+.contact .container p {
+  margin-block: 10px 50px;
+  font-size: 0.875rem;
+}
+@media screen and (max-width: 1000px) {
+  .contact .container p {
+    font-size: 0.6rem;
+  }
+}
+.contact .container form {
+  font-size: 0.875rem;
+  text-align: left;
+}
+@media screen and (max-width: 1000px) {
+  .contact .container form {
+    font-size: 0.825rem;
+  }
+}
+.contact .container form span {
+  color: #9E373C;
+}
+.contact .container input,
+.contact .container textarea {
+  width: 100%;
+  background-color: #fff;
+  margin-block: 5px 30px;
+  padding: 15px 20px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 1000px) {
+  .contact .container input,
+  .contact .container textarea {
+    font-size: 0.875rem;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+  }
+}
+
+footer {
+  background-color: #333;
+  padding: 80px 50px 20px;
+  color: #fff;
+}
+@media screen and (max-width: 1000px) {
+  footer {
+    padding: 40px 10px;
+  }
+}
+footer ul li {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+}
+@media screen and (max-width: 1000px) {
+  footer ul li {
+    font-size: 0.675rem;
+  }
+}
+footer .copyright {
+  padding-block: 20px;
+  font-size: 0.65rem;
+  text-align: right;
+}
+@media screen and (max-width: 1000px) {
+  footer .copyright {
+    font-size: 0.35rem;
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */
